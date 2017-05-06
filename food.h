@@ -2,7 +2,7 @@
 #define FOOD_H_INCLUDED
 
 void initFood();
-void snakeEatFood();
 void drawfood();
+void snakeEatFood();
 
 #endif // FOOD_H_INCLUDED

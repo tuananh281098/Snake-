@@ -79,7 +79,7 @@ void startGame(){
                 }
                 case SDL_MOUSEMOTION:
                 {
-                    cout<< e.motion.x << " " << e.motion.y << endl;
+                   // cout<< e.motion.x << " " << e.motion.y << endl;
                     if(a.x < e.motion.x && e.motion.x < a.w + a.x && a.y < e.motion.y && e.motion.y < a.h + a.y){
                         LoadMedia( "startGame/start.png", 0, 0, WIDTH_WINDOW, HEIGHT_WINDOW );
                         SDL_RenderPresent(renderer);
@@ -111,13 +111,12 @@ void startGame(){
     }
 }
 void mainLoop(){
-    bool pause=false;
     while(!endGame()){
         LoadMedia("map/map1.png", 0, 0, Map.w, HEIGHT_WINDOW);
         checkmove();
         drawsnake();
-        drawfood();
         snakeEatFood();
+        drawfood();
         Score();
         foodToWin();
         SDL_RenderPresent(renderer);
